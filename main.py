@@ -20,12 +20,6 @@ def randomDate():
     random_date = start_date + datetime.timedelta(days=random_number_of_days)
     return random_date
 
-def readResultsFile():
-    today = datetime.date.today()
-    filename = today.strftime('%Y%m')
-    if(os.path.isfile(os.path.expanduser('~/.doomsday-scores/{0}'.format(filename))) != True):
-       createResultsFile()
-
 def updateResultsFile(win):
     if not os.path.exists('results.json'):
         createResultsFile()
